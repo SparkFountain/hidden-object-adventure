@@ -1,12 +1,12 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CollectableObject } from '../interfaces/collectable-object.interface';
 import { Scene } from '../interfaces/scene.interface';
-import { NgStyle, Location, NgIf, NgFor } from '@angular/common';
+import { NgStyle, Location } from '@angular/common';
 import { ContainerComponent } from '../container/container';
 
 @Component({
   selector: 'app-scene',
-  imports: [NgStyle, NgIf, NgFor, ContainerComponent],
+  imports: [NgStyle, ContainerComponent],
   templateUrl: './scene.html',
   styleUrl: './scene.scss',
 })

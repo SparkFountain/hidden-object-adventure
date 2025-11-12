@@ -20,7 +20,7 @@ export class Bar implements OnInit {
       objects: [
         {
           name: 'Cocktail',
-          icon: 'fas fa-cocktail fa-5x',
+          icon: 'fa-martini-glass-citrus fa-5x',
           style: {
             top: 300,
             left: 40,
@@ -30,7 +30,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Bierglas',
-          icon: 'fas fa-beer fa-2x',
+          icon: 'fa-beer fa-2x',
           style: {
             top: 210,
             left: 197,
@@ -40,7 +40,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Weinflasche',
-          icon: 'fas fa-wine-bottle fa-3x',
+          icon: 'fa-wine-bottle fa-3x',
           style: {
             top: 40,
             left: 236,
@@ -50,7 +50,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Whiskey',
-          icon: 'fas fa-glass-whiskey fa-2x',
+          icon: 'fa-glass-whiskey fa-2x',
           style: {
             top: 404,
             left: 192,
@@ -60,7 +60,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Zitrone',
-          icon: 'fas fa-lemon fa-1x',
+          icon: 'fa-lemon fa-1x',
           style: {
             top: 17,
             left: 257,
@@ -71,7 +71,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Würfel',
-          icon: 'fas fa-dice-four fa-2x',
+          icon: 'fa-dice-four fa-2x',
           style: {
             top: 370,
             left: 300,
@@ -81,7 +81,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Zigarette',
-          icon: 'fas fa-smoking fa-1x',
+          icon: 'fa-smoking fa-1x',
           style: {
             top: 135,
             left: 120,
@@ -91,7 +91,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Hamburger',
-          icon: 'fas fa-hamburger fa-6x',
+          icon: 'fa-hamburger fa-6x',
           style: {
             top: 44,
             left: 80,
@@ -101,7 +101,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Fußball',
-          icon: 'fas fa-futbol fa-1x',
+          icon: 'fa-futbol fa-1x',
           style: {
             top: 282,
             left: 198,
@@ -111,7 +111,7 @@ export class Bar implements OnInit {
         },
         {
           name: 'Spielkarte',
-          icon: 'fas fa-money-bill fa-2x',
+          icon: 'fa-money-bill fa-2x',
           style: {
             top: 338,
             left: 208,
