@@ -2,9 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faPray,
+  faBible,
+  faMosque,
+  faStarAndCrescent,
+  faEye,
+  faMenorah,
+  faMagic,
+  faBaby,
+  faBell,
+} from '@fortawesome/free-solid-svg-icons';
+
+import { faItunesNote } from '@fortawesome/free-brands-svg-icons';
+
 @Component({
   selector: 'app-church',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './church.html',
   styleUrl: './church.scss',
 })
@@ -23,7 +38,8 @@ export class ChurchComponent implements OnInit {
       objects: [
         {
           name: 'Betende Person',
-          icon: 'fas fa-pray fa-2x',
+          icon: faPray,
+          size: '2x',
           style: {
             top: 410,
             left: 120,
@@ -32,7 +48,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Bibel',
-          icon: 'fas fa-bible fa-1x',
+          icon: faBible,
+          size: '1x',
           style: {
             top: 157,
             left: 185,
@@ -41,7 +58,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Moschee',
-          icon: 'fas fa-mosque fa-3x',
+          icon: faMosque,
+          size: '3x',
           style: {
             top: 339,
             left: 177,
@@ -51,7 +69,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Halbmond mit Stern',
-          icon: 'fas fa-star-and-crescent fa-2x',
+          icon: faStarAndCrescent,
+          size: '2x',
           style: {
             top: 350,
             left: 22,
@@ -61,7 +80,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Auge',
-          icon: 'far fa-eye fa-1x',
+          icon: faEye,
+          size: '1x',
           style: {
             top: 17,
             left: 206,
@@ -70,7 +90,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Achtelnoten',
-          icon: 'fab fa-itunes-note fa-1x',
+          icon: faItunesNote,
+          size: '1x',
           style: {
             top: 220,
             left: 239,
@@ -79,7 +100,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Kerzenständer',
-          icon: 'fas fa-menorah fa-2x',
+          icon: faMenorah,
+          size: '2x',
           style: {
             top: 262,
             left: 51,
@@ -89,7 +111,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Zauberstab',
-          icon: 'fas fa-magic fa-2x',
+          icon: faMagic,
+          size: '2x',
           style: {
             top: 215,
             left: 282,
@@ -100,7 +123,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Baby',
-          icon: 'fas fa-baby fa-3x',
+          icon: faBaby,
+          size: '3x',
           style: {
             top: 227,
             left: 200,
@@ -111,7 +135,8 @@ export class ChurchComponent implements OnInit {
         },
         {
           name: 'Glocke',
-          icon: 'fas fa-bell fa-1x',
+          icon: faBell,
+          size: '1x',
           style: {
             top: 105,
             left: 28,

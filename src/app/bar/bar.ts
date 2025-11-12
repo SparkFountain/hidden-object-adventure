@@ -2,14 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faMartiniGlassCitrus,
+  faBeerMugEmpty,
+  faWineBottle,
+  faWhiskeyGlass,
+  faLemon,
+  faDiceFour,
+  faSmoking,
+  faBurger,
+  faFutbol,
+  faMoneyBill,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-bar',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './bar.html',
   styleUrl: './bar.scss',
 })
 export class Bar implements OnInit {
   scene!: Scene;
+
+  faMartiniGlassCitrus = faMartiniGlassCitrus;
 
   constructor() {}
 
@@ -20,7 +36,8 @@ export class Bar implements OnInit {
       objects: [
         {
           name: 'Cocktail',
-          icon: 'fa-martini-glass-citrus fa-5x',
+          icon: faMartiniGlassCitrus,
+          size: '5x',
           style: {
             top: 300,
             left: 40,
@@ -30,7 +47,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Bierglas',
-          icon: 'fa-beer fa-2x',
+          icon: faBeerMugEmpty,
+          size: '2x',
           style: {
             top: 210,
             left: 197,
@@ -40,7 +58,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Weinflasche',
-          icon: 'fa-wine-bottle fa-3x',
+          icon: faWineBottle,
+          size: '3x',
           style: {
             top: 40,
             left: 236,
@@ -50,7 +69,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Whiskey',
-          icon: 'fa-glass-whiskey fa-2x',
+          icon: faWhiskeyGlass,
+          size: '2x',
           style: {
             top: 404,
             left: 192,
@@ -60,7 +80,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Zitrone',
-          icon: 'fa-lemon fa-1x',
+          icon: faLemon,
+          size: '1x',
           style: {
             top: 17,
             left: 257,
@@ -71,7 +92,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Würfel',
-          icon: 'fa-dice-four fa-2x',
+          icon: faDiceFour,
+          size: '2x',
           style: {
             top: 370,
             left: 300,
@@ -81,7 +103,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Zigarette',
-          icon: 'fa-smoking fa-1x',
+          icon: faSmoking,
+          size: '1x',
           style: {
             top: 135,
             left: 120,
@@ -91,7 +114,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Hamburger',
-          icon: 'fa-hamburger fa-6x',
+          icon: faBurger,
+          size: '6x',
           style: {
             top: 44,
             left: 80,
@@ -101,7 +125,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Fußball',
-          icon: 'fa-futbol fa-1x',
+          icon: faFutbol,
+          size: '1x',
           style: {
             top: 282,
             left: 198,
@@ -111,7 +136,8 @@ export class Bar implements OnInit {
         },
         {
           name: 'Spielkarte',
-          icon: 'fa-money-bill fa-2x',
+          icon: faMoneyBill,
+          size: '2x',
           style: {
             top: 338,
             left: 208,

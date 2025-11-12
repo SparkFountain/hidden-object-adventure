@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faPaintRoller,
+  faTemperatureLow,
+  faTruck,
+  faGhost,
+  faCrosshairs,
+  faDraftingCompass,
+  faHiking,
+  faPoop,
+  faSocks,
+  faCoffee,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-forest',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './forest.html',
   styleUrl: './forest.scss',
 })
@@ -20,7 +34,8 @@ export class ForestComponent implements OnInit {
       objects: [
         {
           name: 'Malerrolle',
-          icon: 'fas fa-paint-roller fa-5x',
+          icon: faPaintRoller,
+          size: '5x',
           style: {
             top: 274,
             left: 155,
@@ -31,7 +46,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Thermometer',
-          icon: 'fas fa-temperature-low',
+          icon: faTemperatureLow,
+          size: '1x',
           style: {
             top: 180,
             left: 60,
@@ -40,7 +56,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'LKW',
-          icon: 'fas fa-truck',
+          icon: faTruck,
+          size: '1x',
           style: {
             top: 440,
             left: 130,
@@ -50,7 +67,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Gespenst',
-          icon: 'fas fa-ghost fa-3x',
+          icon: faGhost,
+          size: '3x',
           style: {
             top: 120,
             left: 310,
@@ -61,7 +79,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Fadenkreuz',
-          icon: 'fas fa-crosshairs fa-5x',
+          icon: faCrosshairs,
+          size: '5x',
           style: {
             top: 10,
             left: 50,
@@ -71,7 +90,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Zirkel',
-          icon: 'fas fa-drafting-compass fa-3x',
+          icon: faDraftingCompass,
+          size: '3x',
           style: {
             top: 326,
             left: 99,
@@ -81,7 +101,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Wanderer',
-          icon: 'fas fa-hiking',
+          icon: faHiking,
+          size: '1x',
           style: {
             top: 127,
             left: 20,
@@ -90,7 +111,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Exkrement',
-          icon: 'fas fa-poop fa-2x',
+          icon: faPoop,
+          size: '2x',
           style: {
             top: 350,
             left: 261,
@@ -100,7 +122,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Socken',
-          icon: 'fas fa-socks fa-5x',
+          icon: faSocks,
+          size: '5x',
           style: {
             top: 30,
             left: 190,
@@ -111,7 +134,8 @@ export class ForestComponent implements OnInit {
         },
         {
           name: 'Kaffeetasse',
-          icon: 'fas fa-coffee fa-1x',
+          icon: faCoffee,
+          size: '1x',
           style: {
             top: 234,
             left: 36,

@@ -1,6 +1,9 @@
+import { IconDefinition, SizeProp } from '@fortawesome/angular-fontawesome';
+
 export interface CollectableObject {
   name: string;
-  icon: string;
+  icon: IconDefinition;
+  size: SizeProp;
   style: {
     top: number;
     left: number;

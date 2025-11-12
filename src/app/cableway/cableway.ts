@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faSkiing,
+  faGift,
+  faGrinBeam,
+  faChessPawn,
+  faTree,
+  faSnowman,
+  faHollyBerry,
+  faLeaf,
+  faSnowplow,
+  faMitten,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-cableway',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './cableway.html',
   styleUrl: './cableway.scss',
 })
@@ -20,7 +34,8 @@ export class CablewayComponent implements OnInit {
       objects: [
         {
           name: 'Skifahrer',
-          icon: 'fas fa-skiing fa-2x',
+          icon: faSkiing,
+          size: '2x',
           style: {
             top: 300,
             left: 250,
@@ -31,7 +46,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Geschenk',
-          icon: 'fas fa-gift fa-2x',
+          icon: faGift,
+          size: '2x',
           style: {
             top: 420,
             left: 250,
@@ -41,7 +57,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Smiley',
-          icon: 'fas fa-grin-beam fa-4x',
+          icon: faGrinBeam,
+          size: '4x',
           style: {
             top: 3,
             left: 170,
@@ -51,7 +68,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Bauer',
-          icon: 'fas fa-chess-pawn fa-2x',
+          icon: faChessPawn,
+          size: '2x',
           style: {
             top: 190,
             left: 120,
@@ -61,7 +79,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Tanne',
-          icon: 'fas fa-tree fa-2x',
+          icon: faTree,
+          size: '2x',
           style: {
             top: 350,
             left: 320,
@@ -71,7 +90,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Schneemann',
-          icon: 'fas fa-snowman fa-3x',
+          icon: faSnowman,
+          size: '3x',
           style: {
             top: 407,
             left: 127,
@@ -82,7 +102,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Stechpalmenzweig',
-          icon: 'fas fa-holly-berry fa-4x',
+          icon: faHollyBerry,
+          size: '4x',
           style: {
             top: 267,
             left: 29,
@@ -93,7 +114,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Blatt',
-          icon: 'fas fa-leaf fa-3x leaf01',
+          icon: faLeaf, // TODO: add class "leaf01"
+          size: '3x',
           style: {
             top: 20,
             left: 290,
@@ -104,7 +126,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Schneepflug',
-          icon: 'fas fa-snowplow fa-1x',
+          icon: faSnowplow,
+          size: '1x',
           style: {
             top: 160,
             left: 320,
@@ -115,7 +138,8 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Handschuh',
-          icon: 'fas fa-mitten fa-5x',
+          icon: faMitten,
+          size: '5x',
           style: {
             top: 290,
             left: 145,
