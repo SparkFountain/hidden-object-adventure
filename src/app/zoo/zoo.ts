@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './zoo.html',
   styleUrl: './zoo.scss',
 })
-export class Zoo {
-
-}
+export class ZooComponent {}

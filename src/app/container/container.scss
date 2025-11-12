@@ -1,0 +1,28 @@
+@import '../../variables.scss';
+
+:host {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: $red-dark;
+  font-size: 24px;
+}
+
+.arrow {
+  width: 30px;
+  color: $green-dark;
+  z-index: 100;
+}
+
+.word-container {
+  width: 280px;
+  height: 100%;
+  z-index: 99;
+
+  .word {
+    display: inline-flex;
+    align-items: center;
+    height: 100%;
+    margin: 0px 10px;
+  }
+}

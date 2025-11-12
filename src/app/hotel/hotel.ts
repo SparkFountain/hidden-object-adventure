@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-hotel',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './hotel.html',
   styleUrl: './hotel.scss',
 })
-export class Hotel implements OnInit {
-  scene!: IScene;
+export class HotelComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 

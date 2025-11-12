@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-forest',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './forest.html',
   styleUrl: './forest.scss',
 })
-export class Forest implements OnInit {
-  scene!: IScene;
+export class ForestComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 

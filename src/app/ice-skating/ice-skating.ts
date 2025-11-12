@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-ice-skating',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './ice-skating.html',
   styleUrl: './ice-skating.scss',
 })
-export class IceSkating implements OnInit {
-  scene!: IScene;
+export class IceSkatingComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 

@@ -31,10 +31,10 @@
     ></i>
   </div>
 
-  <spark-fountain-advent-container
+  <app-container
     *ngIf="scene.objects && scene.objects.length > 0"
     [words]="words"
     [wordOffset]="wordOffset"
     (changedWord)="changedWord($event)"
-  ></spark-fountain-advent-container>
+  ></app-container>
 </div>

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-church',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './church.html',
   styleUrl: './church.scss',
 })
-export class Church implements OnInit {
-  scene!: IScene;
+export class ChurchComponent implements OnInit {
+  scene!: Scene;
   words!: string[];
 
   constructor() {}

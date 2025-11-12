@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-theater',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './theater.html',
   styleUrl: './theater.scss',
 })
-export class Theater implements OnInit {
-  scene!: IScene;
+export class TheaterComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 

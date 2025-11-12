@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-cableway',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './cableway.html',
   styleUrl: './cableway.scss',
 })
-export class Cableway implements OnInit {
-  scene!: IScene;
+export class CablewayComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 

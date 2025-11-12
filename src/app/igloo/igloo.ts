@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-igloo',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './igloo.html',
   styleUrl: './igloo.scss',
 })
-export class Igloo implements OnInit {
-  scene!: IScene;
+export class IglooComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 

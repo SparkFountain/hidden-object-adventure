@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-bar',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './bar.html',
   styleUrl: './bar.scss',
 })
 export class Bar implements OnInit {
-  scene!: IScene;
+  scene!: Scene;
 
   constructor() {}
 

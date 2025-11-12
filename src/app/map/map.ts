@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './map.html',
   styleUrl: './map.scss',
 })
-export class Map implements OnInit {
+export class MapComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

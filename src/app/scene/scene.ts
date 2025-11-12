@@ -1,15 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CollectableObject } from '../interfaces/collectable-object.interface';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { NgStyle, Location, NgIf, NgFor } from '@angular/common';
+import { ContainerComponent } from '../container/container';
 
 @Component({
   selector: 'app-scene',
-  imports: [],
+  imports: [NgStyle, NgIf, NgFor, ContainerComponent],
   templateUrl: './scene.html',
   styleUrl: './scene.scss',
 })
-export class Scene implements OnInit {
-  @Input('scene') scene!: IScene;
+export class SceneComponent implements OnInit {
+  @Input('scene') scene!: Scene;
   words!: string[];
   wordOffset!: number;
 
@@ -27,7 +29,7 @@ export class Scene implements OnInit {
     return `url('/assets/gfx/scenes/${this.scene.backgroundUrl}') no-repeat`;
   }
 
-  renderStyle(obj: CollectableObject): object {
+  renderStyle(obj: any): object {
     return {
       top: `${obj.style.top}px`,
       left: `${obj.style.left}px`,
@@ -36,13 +38,15 @@ export class Scene implements OnInit {
     };
   }
 
-  renderClasses(obj: CollectableObject): string {
+  renderClasses(obj: any): string {
     let result = obj.icon;
     obj.classes?.forEach((c: string) => (result += ` ${c}`));
     return result;
   }
 
-  changedWord(offset: number): void {
+  changedWord(offset: any): void {
+    console.log('>>> offset', offset);
+
     this.wordOffset += offset;
   }
 
@@ -52,14 +56,14 @@ export class Scene implements OnInit {
 
   help(): void {
     // in case of missing classes array, add it
-    if (!this.scene.objects[this.wordOffset].classes) {
-      this.scene.objects[this.wordOffset].classes = [];
+    if (!this.scene.objects![this.wordOffset].classes) {
+      this.scene.objects![this.wordOffset].classes = [];
     }
 
     // highlight active object
-    this.scene.objects[this.wordOffset].classes.push('animate__animated animate__flash');
+    this.scene.objects[this.wordOffset].classes!.push('animate__animated animate__flash');
 
-    setTimeout(() => this.scene.objects[this.wordOffset].classes.pop(), 1000);
+    setTimeout(() => this.scene.objects[this.wordOffset].classes!.pop(), 1000);
   }
 
   collect(objectName: string): void {
@@ -74,7 +78,7 @@ export class Scene implements OnInit {
     }
 
     // highlight selected object
-    this.scene.objects[this.wordOffset].classes.push('animate__animated animate__heartBeat');
+    this.scene.objects[this.wordOffset].classes!.push('animate__animated animate__heartBeat');
 
     setTimeout(() => {
       this.scene.objects.splice(this.wordOffset, 1);

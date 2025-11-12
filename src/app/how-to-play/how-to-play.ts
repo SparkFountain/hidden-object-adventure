@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './how-to-play.html',
   styleUrl: './how-to-play.scss',
 })
-export class HowToPlay implements OnInit {
+export class HowToPlayComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

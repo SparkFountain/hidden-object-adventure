@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-welcome',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './welcome.html',
   styleUrl: './welcome.scss',
 })
-export class Welcome implements OnInit {
-  scene!: IScene;
+export class WelcomeComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 
@@ -123,6 +124,7 @@ export class Welcome implements OnInit {
           classes: ['grey', 'circle-shadow-dark'],
         },
       ],
+      objects: [],
     };
   }
 }

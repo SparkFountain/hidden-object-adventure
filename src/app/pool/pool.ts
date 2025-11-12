@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { IScene } from '../interfaces/scene.interface';
+import { Scene } from '../interfaces/scene.interface';
+import { SceneComponent } from '../scene/scene';
 
 @Component({
   selector: 'app-pool',
-  imports: [],
+  imports: [SceneComponent],
   templateUrl: './pool.html',
   styleUrl: './pool.scss',
 })
-export class Pool implements OnInit {
-  scene!: IScene;
+export class PoolComponent implements OnInit {
+  scene!: Scene;
 
   constructor() {}
 
