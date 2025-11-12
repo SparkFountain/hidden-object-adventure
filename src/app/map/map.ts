@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   templateUrl: './map.html',
   styleUrl: './map.scss',
 })
-export class Map {
+export class Map implements OnInit {
+  constructor() {}
 
+  ngOnInit(): void {}
 }

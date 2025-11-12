@@ -1,0 +1,140 @@
+@import '../../variables.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  background: url('/assets/gfx/map.jpg') no-repeat;
+  text-align: center;
+  overflow: hidden;
+
+  .absolute {
+    position: absolute;
+
+    h1 {
+      position: absolute;
+      width: 360px;
+    }
+  }
+}
+
+label {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.fas {
+  position: absolute;
+}
+
+.fa-caret-square-left {
+  top: 10px;
+  left: 10px;
+}
+
+.fa-church {
+  top: 200px;
+  left: 35px;
+}
+.church {
+  position: absolute;
+  top: 233px;
+  left: 30px;
+}
+
+.tree1 {
+  top: 80px;
+  left: 277px;
+}
+.tree2 {
+  top: 64px;
+  left: 297px;
+}
+.tree3 {
+  top: 70px;
+  left: 310px;
+}
+.forest {
+  top: 114px;
+  left: 290px;
+  color: $green-dark;
+}
+
+.fa-igloo {
+  top: 430px;
+  left: 211px;
+}
+.igloo {
+  top: 464px;
+  left: 197px;
+}
+
+.fa-paw {
+  top: 360px;
+  left: 284px;
+}
+.zoo {
+  top: 394px;
+  left: 285px;
+  color: $grey;
+}
+
+.fa-tram {
+  top: 80px;
+  left: 60px;
+}
+.cableway {
+  top: 114px;
+  left: 44px;
+  color: $black;
+}
+
+.fa-theater-masks {
+  top: 270px;
+  left: 150px;
+}
+.theater {
+  top: 306px;
+  left: 140px;
+  color: $green;
+}
+
+.fa-glass-cheers {
+  top: 217px;
+  left: 250px;
+}
+.bar {
+  top: 250px;
+  left: 255px;
+  color: $red;
+}
+
+.fa-swimmer {
+  top: 330px;
+  left: 50px;
+}
+.pool {
+  top: 356px;
+  left: 22px;
+  color: $black;
+}
+
+.fa-hotel {
+  top: 430px;
+  left: 83px;
+}
+.hotel {
+  top: 467px;
+  left: 81px;
+  color: $grey;
+}
+
+.fa-skating {
+  top: 115px;
+  left: 180px;
+}
+.ice-skating {
+  top: 150px;
+  left: 160px;
+  color: $white;
+}

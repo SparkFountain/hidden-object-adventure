@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Scene } from '../interfaces/scene.interface';
+import { IScene } from '../interfaces/scene.interface';
 
 @Component({
   selector: 'app-welcome',
@@ -8,7 +8,7 @@ import { Scene } from '../interfaces/scene.interface';
   styleUrl: './welcome.scss',
 })
 export class Welcome implements OnInit {
-  scene!: Scene;
+  scene!: IScene;
 
   constructor() {}
 

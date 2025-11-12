@@ -1,7 +1,7 @@
 import { CollectableObject } from './collectable-object.interface';
 import { Decoration } from '../interfaces/decoration.interface';
 
-export interface Scene {
+export interface IScene {
   name: string;
   backgroundUrl: string;
   objects?: CollectableObject[];
