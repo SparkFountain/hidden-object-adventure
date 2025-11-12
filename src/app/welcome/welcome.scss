@@ -1,0 +1,19 @@
+.container {
+  position: fixed;
+  padding: 0 !important;
+  top: 0;
+  width: 360px;
+  height: 512px;
+  text-align: center;
+
+  h1 {
+    width: 360px;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}

@@ -2,6 +2,7 @@
   "name": "hidden-object-adventure",
   "short_name": "hidden-object-adventure",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "./",
   "start_url": "./",
   "icons": [
