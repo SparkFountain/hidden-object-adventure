@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faGuitar,
+  faSuitcase,
+  faPassport,
+  faLightbulb,
+  faMobile,
+  faGlasses,
+  faPaperclip,
+  faHighlighter,
+  faSun,
+  faHourglassEnd,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-hotel',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './hotel.html',
   styleUrl: './hotel.scss',
 })
@@ -20,7 +34,8 @@ export class HotelComponent implements OnInit {
       objects: [
         {
           name: 'Gitarre',
-          icon: 'fas fa-guitar fa-3x',
+          icon: faGuitar,
+          size: '3x',
           style: {
             top: 124,
             left: 55,
@@ -31,7 +46,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Koffer',
-          icon: 'fas fa-suitcase fa-3x',
+          icon: faSuitcase,
+          size: '3x',
           style: {
             top: 120,
             left: 275,
@@ -41,7 +57,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Reisepass',
-          icon: 'fas fa-passport fa-3x',
+          icon: faPassport,
+          size: '3x',
           style: {
             top: 386,
             left: 223,
@@ -51,7 +68,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Glühbirne',
-          icon: 'fas fa-lightbulb fa-2x',
+          icon: faLightbulb,
+          size: '2x',
           style: {
             top: 400,
             left: 280,
@@ -61,7 +79,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Smartphone',
-          icon: 'fas fa-mobile fa-4x',
+          icon: faMobile,
+          size: '4x',
           style: {
             top: 230,
             left: 70,
@@ -72,7 +91,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Brille',
-          icon: 'fas fa-glasses fa-2x',
+          icon: faGlasses,
+          size: '2x',
           style: {
             top: 277,
             left: 300,
@@ -83,7 +103,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Büroklammer',
-          icon: 'fas fa-paperclip',
+          icon: faPaperclip,
+          size: '1x',
           style: {
             top: 54,
             left: 88,
@@ -93,7 +114,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Textmarker',
-          icon: 'fas fa-highlighter fa-2x',
+          icon: faHighlighter,
+          size: '2x',
           style: {
             top: 335,
             left: 14,
@@ -103,7 +125,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Sonne',
-          icon: 'fas fa-sun',
+          icon: faSun,
+          size: '1x',
           style: {
             top: 430,
             left: 145,
@@ -113,7 +136,8 @@ export class HotelComponent implements OnInit {
         },
         {
           name: 'Sanduhr',
-          icon: 'fas fa-hourglass-end fa-1x',
+          icon: faHourglassEnd,
+          size: '1x',
           style: {
             top: 117,
             left: 157,

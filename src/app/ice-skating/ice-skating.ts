@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faAirFreshener,
+  faPlane,
+  faBolt,
+  faWalking,
+  faArchway,
+  faBone,
+  faBandAid,
+  faHatWizard,
+  faStore,
+  faShoppingBag,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-ice-skating',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './ice-skating.html',
   styleUrl: './ice-skating.scss',
 })
@@ -20,7 +34,8 @@ export class IceSkatingComponent implements OnInit {
       objects: [
         {
           name: 'Duftbäumchen',
-          icon: 'fas fa-air-freshener fa-4x',
+          icon: faAirFreshener,
+          size: '4x',
           style: {
             top: 173,
             left: 155,
@@ -30,7 +45,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Flugzeug',
-          icon: 'fas fa-plane fa-3x',
+          icon: faPlane,
+          size: '3x',
           style: {
             top: 10,
             left: 150,
@@ -40,7 +56,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Blitz',
-          icon: 'fas fa-bolt fa-1x',
+          icon: faBolt,
+          size: '1x',
           style: {
             top: 428,
             left: 103,
@@ -50,7 +67,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Spaziergänger',
-          icon: 'fas fa-walking fa-2x',
+          icon: faWalking,
+          size: '2x',
           style: {
             top: 203,
             left: 320,
@@ -59,7 +77,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Torbogen',
-          icon: 'fas fa-archway fa-1x',
+          icon: faArchway,
+          size: '1x',
           style: {
             top: 46,
             left: 64,
@@ -68,7 +87,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Knochen',
-          icon: 'fas fa-bone fa-4x',
+          icon: faBone,
+          size: '4x',
           style: {
             top: 380,
             left: 180,
@@ -78,7 +98,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Pflaster',
-          icon: 'fas fa-band-aid fa-1x',
+          icon: faBandAid,
+          size: '1x',
           style: {
             top: 150,
             left: 287,
@@ -89,7 +110,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Zauberhut',
-          icon: 'fas fa-hat-wizard fa-2x',
+          icon: faHatWizard,
+          size: '2x',
           style: {
             top: 186,
             left: 261,
@@ -99,7 +121,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Kiosk',
-          icon: 'fas fa-store fa-2x',
+          icon: faStore,
+          size: '2x',
           style: {
             top: 210,
             left: 50,
@@ -109,7 +132,8 @@ export class IceSkatingComponent implements OnInit {
         },
         {
           name: 'Tasche',
-          icon: 'fas fa-shopping-bag fa-2x',
+          icon: faShoppingBag,
+          size: '2x',
           style: {
             top: 228,
             left: 25,

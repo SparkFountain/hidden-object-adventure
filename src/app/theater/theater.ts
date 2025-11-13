@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faPersonBooth,
+  faClock,
+  faCompactDisc,
+  faAward,
+  faChair,
+  faDrum,
+  faUserSecret,
+  faFireExtinguisher,
+  faGem,
+  faUmbrella,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-theater',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './theater.html',
   styleUrl: './theater.scss',
 })
@@ -20,7 +34,8 @@ export class TheaterComponent implements OnInit {
       objects: [
         {
           name: 'Umkleidekabine',
-          icon: 'fas fa-person-booth fa-4x',
+          icon: faPersonBooth,
+          size: '4x',
           style: {
             top: 360,
             left: 228,
@@ -30,7 +45,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Uhr',
-          icon: 'far fa-clock fa-2x',
+          icon: faClock,
+          size: '2x',
           style: {
             top: 73,
             left: 166,
@@ -39,7 +55,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Schallplatte',
-          icon: 'fas fa-compact-disc fa-2x',
+          icon: faCompactDisc,
+          size: '2x',
           style: {
             top: 307,
             left: 5,
@@ -48,7 +65,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Abzeichen',
-          icon: 'fas fa-award fa-2x',
+          icon: faAward,
+          size: '2x',
           style: {
             top: 334,
             left: 117,
@@ -57,7 +75,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Stuhl',
-          icon: 'fas fa-chair fa-3x',
+          icon: faChair,
+          size: '3x',
           style: {
             top: 365,
             left: 303,
@@ -67,7 +86,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Trommel',
-          icon: 'fas fa-drum fa-6x',
+          icon: faDrum,
+          size: '6x',
           style: {
             top: 135,
             left: 128,
@@ -77,7 +97,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Detektiv',
-          icon: 'fas fa-user-secret fa-2x',
+          icon: faUserSecret,
+          size: '2x',
           style: {
             top: 212,
             left: 40,
@@ -87,7 +108,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Feuerlöscher',
-          icon: 'fas fa-fire-extinguisher fa-2x',
+          icon: faFireExtinguisher,
+          size: '2x',
           style: {
             top: 222,
             left: 264,
@@ -98,7 +120,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Diamant',
-          icon: 'fas fa-gem',
+          icon: faGem,
+          size: '1x',
           style: {
             top: 184,
             left: 270,
@@ -107,7 +130,8 @@ export class TheaterComponent implements OnInit {
         },
         {
           name: 'Regenschirm',
-          icon: 'fas fa-umbrella fa-4x',
+          icon: faUmbrella,
+          size: '4x',
           style: {
             top: 47,
             left: 256,

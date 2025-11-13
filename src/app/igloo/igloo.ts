@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faSleigh,
+  faCookieBite,
+  faMoon,
+  faBroom,
+  faDragon,
+  faBalanceScale,
+  faToiletPaper,
+  faTrailer,
+  faHammer,
+  faOilCan,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-igloo',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './igloo.html',
   styleUrl: './igloo.scss',
 })
@@ -20,7 +34,8 @@ export class IglooComponent implements OnInit {
       objects: [
         {
           name: 'Schlitten',
-          icon: 'fas fa-sleigh fa-3x',
+          icon: faSleigh,
+          size: '3x',
           style: {
             top: 406,
             left: 50,
@@ -29,7 +44,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Angeknabberter Keks',
-          icon: 'fas fa-cookie-bite',
+          icon: faCookieBite,
+          size: '1x',
           style: {
             top: 246,
             left: 222,
@@ -38,7 +54,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Mondsichel',
-          icon: 'fas fa-moon fa-2x',
+          icon: faMoon,
+          size: '2x',
           style: {
             top: 20,
             left: 120,
@@ -47,7 +64,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Besen',
-          icon: 'fas fa-broom fa-2x',
+          icon: faBroom,
+          size: '2x',
           style: {
             top: 381,
             left: 300,
@@ -57,7 +75,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Drachen',
-          icon: 'fas fa-dragon',
+          icon: faDragon,
+          size: '1x',
           style: {
             top: 345,
             left: 107,
@@ -67,7 +86,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Balkenwaage',
-          icon: 'fas fa-balance-scale',
+          icon: faBalanceScale,
+          size: '1x',
           style: {
             top: 220,
             left: 13,
@@ -77,7 +97,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Toilettenpapier',
-          icon: 'fas fa-toilet-paper',
+          icon: faToiletPaper,
+          size: '1x',
           style: {
             top: 313,
             left: 298,
@@ -87,7 +108,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Anhänger',
-          icon: 'fas fa-trailer fa-7x',
+          icon: faTrailer,
+          size: '7x',
           style: {
             top: 90,
             left: 180,
@@ -98,7 +120,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Hammer',
-          icon: 'fas fa-hammer fa-1x',
+          icon: faHammer,
+          size: '1x',
           style: {
             top: 387,
             left: 222,
@@ -109,7 +132,8 @@ export class IglooComponent implements OnInit {
         },
         {
           name: 'Ölkanne',
-          icon: 'fas fa-oil-can fa-2x',
+          icon: faOilCan,
+          size: '2x',
           style: {
             top: 291,
             left: 210,

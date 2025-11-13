@@ -2,9 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faShower,
+  faTint,
+  faSwimmingPool,
+  faShip,
+  faHatCowboy,
+  faVolleyballBall,
+  faFish,
+  faCloudShowersHeavy,
+  faAnchor,
+  faLifeRing,
+} from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-pool',
-  imports: [SceneComponent],
+  imports: [SceneComponent, FontAwesomeModule],
   templateUrl: './pool.html',
   styleUrl: './pool.scss',
 })
@@ -20,7 +34,8 @@ export class PoolComponent implements OnInit {
       objects: [
         {
           name: 'Duschkopf',
-          icon: 'fas fa-shower fa-3x',
+          icon: faShower,
+          size: '3x',
           style: {
             top: 180,
             left: 82,
@@ -29,7 +44,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Wassertropfen',
-          icon: 'fas fa-tint fa-1x',
+          icon: faTint,
+          size: '1x',
           style: {
             top: 196,
             left: 262,
@@ -38,7 +54,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Leiter',
-          icon: 'fas fa-swimming-pool fa-3x',
+          icon: faSwimmingPool,
+          size: '3x',
           style: {
             top: 300,
             left: 262,
@@ -47,7 +64,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Schiff',
-          icon: 'fas fa-ship fa-2x',
+          icon: faShip,
+          size: '2x',
           style: {
             top: 400,
             left: 262,
@@ -58,7 +76,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Cowboyhut',
-          icon: 'fas fa-hat-cowboy',
+          icon: faHatCowboy,
+          size: '1x',
           style: {
             top: 107,
             left: 180,
@@ -67,7 +86,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Wasserball',
-          icon: 'fas fa-volleyball-ball fa-2x',
+          icon: faVolleyballBall,
+          size: '2x',
           style: {
             top: 299,
             left: 88,
@@ -76,7 +96,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Fisch',
-          icon: 'fas fa-fish fa-1x',
+          icon: faFish,
+          size: '1x',
           style: {
             top: 432,
             left: 88,
@@ -86,7 +107,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Regenwolke',
-          icon: 'fas fa-cloud-showers-heavy fa-2x',
+          icon: faCloudShowersHeavy,
+          size: '2x',
           style: {
             top: 10,
             left: 188,
@@ -95,7 +117,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Anker',
-          icon: 'fas fa-anchor fa-1x',
+          icon: faAnchor,
+          size: '1x',
           style: {
             top: 340,
             left: 118,
@@ -104,7 +127,8 @@ export class PoolComponent implements OnInit {
         },
         {
           name: 'Rettungsring',
-          icon: 'fas fa-life-ring fa-3x',
+          icon: faLifeRing,
+          size: '3x',
           style: {
             top: 40,
             left: 18,
