@@ -4,9 +4,12 @@ import { Scene } from '../interfaces/scene.interface';
 import { NgStyle, Location } from '@angular/common';
 import { ContainerComponent } from '../container/container';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faScroll, faQuestionCircle, faTrophy } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-scene',
-  imports: [NgStyle, ContainerComponent],
+  imports: [NgStyle, ContainerComponent, FontAwesomeModule],
   templateUrl: './scene.html',
   styleUrl: './scene.scss',
 })
@@ -14,6 +17,11 @@ export class SceneComponent implements OnInit {
   @Input('scene') scene!: Scene;
   words!: string[];
   wordOffset!: number;
+
+  // FontAwesome icons
+  faScroll = faScroll;
+  faQuestionCircle = faQuestionCircle;
+  faTrophy = faTrophy;
 
   constructor(private location: Location) {}
 
@@ -30,6 +38,8 @@ export class SceneComponent implements OnInit {
   }
 
   renderStyle(obj: any): object {
+    console.log('>>> renderClasses', obj);
+
     return {
       top: `${obj.style.top}px`,
       left: `${obj.style.left}px`,
@@ -39,7 +49,7 @@ export class SceneComponent implements OnInit {
   }
 
   renderClasses(obj: any): string {
-    let result = obj.icon;
+    let result = '';
     obj.classes?.forEach((c: string) => (result += ` ${c}`));
     return result;
   }

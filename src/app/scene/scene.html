@@ -1,19 +1,19 @@
 <div class="container" [ngStyle]="{ background: renderBackgroundUrl() }">
   <div class="absolute">
     <!-- MAP SYMBOL -->
-
     @if(scene.objects.length > 0) {
-    <i class="fa-scroll green-dark circle-shadow-light fa-2x back-to-map" (click)="back()"></i>
+    <fa-icon [icon]="faScroll" [size]="'2x'" class="green-dark circle-shadow-light back-to-map" (click)="back()" />
     }
 
     <!-- HELP SYMBOL -->
     @if (scene.objects.length > 0) {
-    <i class="fa-question-circle red circle-shadow-light fa-2x help" (click)="help()"></i>
+    <fa-icon [icon]="faQuestionCircle" [size]="'2x'" class="red circle-shadow-light help" (click)="help()" />
     }
 
     <!-- CLICKABLE OBJECTS -->
     @for(obj of scene.objects; track $index) {
-    <i [class]="renderClasses(obj)" [ngStyle]="renderStyle(obj)" (click)="collect(obj.name)"></i>
+    <fa-icon [icon]="obj.icon" [size]="obj.size" [ngStyle]="renderStyle(obj)" [class]="renderClasses(obj)"
+      (click)="collect(obj.name)" />
     }
 
     <!-- PLACEHOLDER OBJECTS -->
@@ -23,17 +23,12 @@
 
     <!-- TROPHY -->
     @if(scene.objects && scene.objects.length === 0) {
-    <i
-      class="fa-trophy trophy fa-10x circle-shadow-light animate__animated animate__fadeInDown animate__flip"
-    ></i>
+    <fa-icon [icon]="faTrophy" [size]="'10x'"
+      class="trophy circle-shadow-light animate__animated animate__fadeInDown animate__flip" />
     }
   </div>
 
   @if(scene.objects && scene.objects.length > 0) {
-  <app-container
-    [words]="words"
-    [wordOffset]="wordOffset"
-    (changedWord)="changedWord($event)"
-  ></app-container>
+  <app-container [words]="words" [wordOffset]="wordOffset" (changedWord)="changedWord($event)"></app-container>
   }
 </div>
