@@ -3,6 +3,7 @@ import { CollectableObject } from '../interfaces/collectable-object.interface';
 import { Scene } from '../interfaces/scene.interface';
 import { NgStyle, Location } from '@angular/common';
 import { ContainerComponent } from '../container/container';
+import { signal } from '@angular/core';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faScroll, faQuestionCircle, faTrophy } from '@fortawesome/free-solid-svg-icons';
@@ -15,9 +16,13 @@ import { Decoration, DecoStyle } from '../interfaces/decoration.interface';
   styleUrl: './scene.scss',
 })
 export class SceneComponent implements OnInit {
-  @Input('scene') scene!: Scene;
-  words!: string[];
-  wordOffset!: number;
+  @Input({ required: true }) scene!: Scene;
+  sceneSignal = signal<Scene>({
+    name: '',
+    backgroundUrl: '',
+  });
+  wordsSignal = signal<string[]>([]);
+  wordOffset = 0;
 
   // FontAwesome icons
   faScroll = faScroll;
@@ -27,15 +32,15 @@ export class SceneComponent implements OnInit {
   constructor(private location: Location) {}
 
   ngOnInit(): void {
-    this.words = [];
-    this.wordOffset = 0;
-    this.scene.objects?.forEach((obj: CollectableObject) => {
-      this.words.push(obj.name);
+    this.sceneSignal.set(structuredClone(this.scene));
+
+    this.sceneSignal().objects?.forEach((obj: CollectableObject) => {
+      this.wordsSignal.update((words: string[]) => [...words, obj.name]);
     });
   }
 
   renderBackgroundUrl(): string {
-    return `url('/assets/gfx/scenes/${this.scene.backgroundUrl}') no-repeat`;
+    return `url('/assets/gfx/scenes/${this.sceneSignal().backgroundUrl}') no-repeat`;
   }
 
   renderStyle(obj: Decoration): DecoStyle {
@@ -62,46 +67,58 @@ export class SceneComponent implements OnInit {
   }
 
   help(): void {
-    if (!this.scene.objects) return;
+    if (!this.sceneSignal().objects) return;
 
     // in case of missing classes array, add it
-    if (!this.scene.objects![this.wordOffset].classes) {
-      this.scene.objects![this.wordOffset].classes = [];
+    if (!this.sceneSignal().objects![this.wordOffset].classes) {
+      this.sceneSignal().objects![this.wordOffset].classes = [];
     }
 
     // highlight active object
-    this.scene.objects[this.wordOffset].classes!.push('animate__animated animate__flash');
+    this.sceneSignal().objects![this.wordOffset].classes!.push('animate__animated animate__flash');
 
-    setTimeout(() => this.scene.objects![this.wordOffset].classes!.pop(), 1000);
+    setTimeout(() => this.sceneSignal().objects![this.wordOffset].classes!.pop(), 1000);
   }
 
   collect(objectName: string): void {
-    if (!this.scene.objects) return;
+    if (!this.sceneSignal().objects) return;
 
     // check if correct object has been selected
-    if (!(this.scene.objects[this.wordOffset].name === objectName)) {
+    if (!(this.sceneSignal().objects![this.wordOffset].name === objectName)) {
       return;
     }
 
     // in case of missing classes array, add it
-    if (!this.scene.objects[this.wordOffset].classes) {
-      this.scene.objects[this.wordOffset].classes = [];
+    if (!this.sceneSignal().objects![this.wordOffset].classes) {
+      this.sceneSignal().objects![this.wordOffset].classes = [];
     }
 
     // highlight selected object
-    this.scene.objects[this.wordOffset].classes!.push('animate__animated animate__heartBeat');
+    this.sceneSignal().objects![this.wordOffset].classes!.push(
+      'animate__animated animate__heartBeat'
+    );
 
     setTimeout(() => {
-      this.scene.objects = this.scene.objects!.toSpliced(this.wordOffset, 1);
+      this.sceneSignal.update((scene: Scene) => ({
+        ...scene,
+        objects: this.removeAtIndex(scene.objects!, this.wordOffset),
+      }));
 
-      this.words = this.words.toSpliced(this.wordOffset, 1);
-      if (this.wordOffset > this.words.length - 1) {
+      this.wordsSignal.update((words: string[]) => this.removeAtIndex(words, this.wordOffset));
+      if (this.wordOffset > this.wordsSignal().length - 1) {
         this.wordOffset--;
       }
 
-      if (this.words.length === 0) {
+      console.log('>>> Scene:', this.sceneSignal());
+      console.log('>>> Words:', this.wordsSignal());
+
+      if (this.wordsSignal().length === 0) {
         setTimeout(() => this.location.back(), 3000);
       }
     }, 1000);
+  }
+
+  private removeAtIndex<T>(arr: T[], index: number): T[] {
+    return [...arr.slice(0, index), ...arr.slice(index + 1)];
   }
 }

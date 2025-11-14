@@ -1,34 +1,34 @@
 <div class="container" [ngStyle]="{ background: renderBackgroundUrl() }">
   <div class="absolute">
     <!-- MAP SYMBOL -->
-    @if(scene.objects) {
+    @if(sceneSignal().objects) {
     <fa-icon [icon]="faScroll" size="2x" class="green-dark circle-shadow-light back-to-map" (click)="back()" />
     }
 
     <!-- HELP SYMBOL -->
-    @if (scene.objects) {
+    @if (sceneSignal().objects) {
     <fa-icon [icon]="faQuestionCircle" size="2x" class="red circle-shadow-light help" (click)="help()" />
     }
 
     <!-- CLICKABLE OBJECTS -->
-    @for(obj of scene.objects; track $index) {
+    @for(obj of sceneSignal().objects; track $index) {
     <fa-icon [icon]="obj.icon" [size]="obj.size" [ngStyle]="renderStyle(obj)" [class]="renderClasses(obj)"
       (click)="collect(obj.name)" />
     }
 
     <!-- PLACEHOLDER OBJECTS -->
-    @for(dec of scene.decoration; track $index) {
+    @for(dec of sceneSignal().decoration; track $index) {
     <fa-icon [icon]="dec.icon" [size]="dec.size" [ngStyle]="renderStyle(dec)" [class]="renderClasses(dec)" />
     }
 
     <!-- TROPHY -->
-    @if(scene.objects && scene.objects.length === 0) {
+    @if(sceneSignal().objects && sceneSignal().objects!.length === 0) {
     <fa-icon [icon]="faTrophy" size="10x"
       class="trophy circle-shadow-light animate__animated animate__fadeInDown animate__flip" />
     }
   </div>
 
-  @if(scene.objects && scene.objects.length > 0) {
-  <app-container [words]="words" [wordOffset]="wordOffset" (changedWord)="changedWord($event)"></app-container>
+  @if(sceneSignal().objects && sceneSignal().objects!.length > 0) {
+  <app-container [words]="wordsSignal()" [wordOffset]="wordOffset" (changedWord)="changedWord($event)"></app-container>
   }
 </div>
