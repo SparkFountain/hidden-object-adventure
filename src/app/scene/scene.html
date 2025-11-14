@@ -12,7 +12,7 @@
 
     <!-- CLICKABLE OBJECTS -->
     @for(obj of sceneSignal().objects; track $index) {
-    <fa-icon [icon]="obj.icon" [size]="obj.size" [ngStyle]="renderStyle(obj)" [class]="renderClasses(obj)"
+    <fa-icon [icon]="obj.icon" [size]="obj.size" [ngStyle]="renderStyle(obj)" [class]="renderClasses(obj)" [ngClass]="highlightClasses()"
       (click)="collect(obj.name)" />
     }
 

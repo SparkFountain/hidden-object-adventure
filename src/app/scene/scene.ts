@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, computed, Input, OnInit } from '@angular/core';
 import { CollectableObject } from '../interfaces/collectable-object.interface';
 import { Scene } from '../interfaces/scene.interface';
-import { NgStyle, Location } from '@angular/common';
+import { NgStyle, Location, NgClass } from '@angular/common';
 import { ContainerComponent } from '../container/container';
 import { signal } from '@angular/core';
 
@@ -11,7 +11,7 @@ import { Decoration, DecoStyle } from '../interfaces/decoration.interface';
 
 @Component({
   selector: 'app-scene',
-  imports: [NgStyle, ContainerComponent, FontAwesomeModule],
+  imports: [NgStyle, NgClass, ContainerComponent, FontAwesomeModule],
   templateUrl: './scene.html',
   styleUrl: './scene.scss',
 })
@@ -23,11 +23,17 @@ export class SceneComponent implements OnInit {
   });
   wordsSignal = signal<string[]>([]);
   wordOffset = 0;
+  highlightSignal = signal<boolean>(false);
 
   // FontAwesome icons
   faScroll = faScroll;
   faQuestionCircle = faQuestionCircle;
   faTrophy = faTrophy;
+
+  highlightClasses = computed(() => ({
+    animate__animated: this.highlightSignal(),
+    animate__flash: this.highlightSignal(),
+  }));
 
   constructor(private location: Location) {}
 
@@ -75,6 +81,11 @@ export class SceneComponent implements OnInit {
     }
 
     // highlight active object
+    this.highlightSignal.set(false);
+    // requestAnimationFrame(() => {
+    //   this.highlightSignal.set(true);
+    // });
+
     this.sceneSignal().objects![this.wordOffset].classes!.push('animate__animated animate__flash');
 
     setTimeout(() => this.sceneSignal().objects![this.wordOffset].classes!.pop(), 1000);
@@ -108,9 +119,6 @@ export class SceneComponent implements OnInit {
       if (this.wordOffset > this.wordsSignal().length - 1) {
         this.wordOffset--;
       }
-
-      console.log('>>> Scene:', this.sceneSignal());
-      console.log('>>> Words:', this.wordsSignal());
 
       if (this.wordsSignal().length === 0) {
         setTimeout(() => this.location.back(), 3000);
