@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faScroll } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-how-to-play',
-  imports: [],
+  imports: [FontAwesomeModule, RouterModule],
   templateUrl: './how-to-play.html',
   styleUrl: './how-to-play.scss',
 })
 export class HowToPlayComponent implements OnInit {
+  // FontAwesome icons
+  faScroll = faScroll;
+
   constructor() {}
 
   ngOnInit(): void {}

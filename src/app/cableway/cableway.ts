@@ -114,7 +114,7 @@ export class CablewayComponent implements OnInit {
         },
         {
           name: 'Blatt',
-          icon: faLeaf, // TODO: add class "leaf01"
+          icon: faLeaf,
           size: '3x',
           style: {
             top: 20,
@@ -122,7 +122,7 @@ export class CablewayComponent implements OnInit {
             opacity: 0.5,
             transform: 'rotate(140deg)',
           },
-          classes: ['green', 'circle-shadow-light'],
+          classes: ['green', 'circle-shadow-light', 'leaf01'],
         },
         {
           name: 'Schneepflug',

@@ -1,14 +1,5 @@
-import { IconDefinition, SizeProp } from '@fortawesome/angular-fontawesome';
+import { Decoration } from './decoration.interface';
 
-export interface CollectableObject {
+export interface CollectableObject extends Decoration {
   name: string;
-  icon: IconDefinition;
-  size: SizeProp;
-  style: {
-    top: number;
-    left: number;
-    transform?: string;
-    opacity?: number;
-  };
-  classes?: string[];
 }

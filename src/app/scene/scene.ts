@@ -6,6 +6,7 @@ import { ContainerComponent } from '../container/container';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faScroll, faQuestionCircle, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { Decoration, DecoStyle } from '../interfaces/decoration.interface';
 
 @Component({
   selector: 'app-scene',
@@ -37,9 +38,7 @@ export class SceneComponent implements OnInit {
     return `url('/assets/gfx/scenes/${this.scene.backgroundUrl}') no-repeat`;
   }
 
-  renderStyle(obj: any): object {
-    console.log('>>> renderClasses', obj);
-
+  renderStyle(obj: Decoration): DecoStyle {
     return {
       top: `${obj.style.top}px`,
       left: `${obj.style.left}px`,
@@ -48,15 +47,13 @@ export class SceneComponent implements OnInit {
     };
   }
 
-  renderClasses(obj: any): string {
+  renderClasses(obj: Decoration): string {
     let result = '';
     obj.classes?.forEach((c: string) => (result += ` ${c}`));
     return result;
   }
 
-  changedWord(offset: any): void {
-    console.log('>>> offset', offset);
-
+  changedWord(offset: number): void {
     this.wordOffset += offset;
   }
 
@@ -65,6 +62,8 @@ export class SceneComponent implements OnInit {
   }
 
   help(): void {
+    if (!this.scene.objects) return;
+
     // in case of missing classes array, add it
     if (!this.scene.objects![this.wordOffset].classes) {
       this.scene.objects![this.wordOffset].classes = [];
@@ -73,10 +72,12 @@ export class SceneComponent implements OnInit {
     // highlight active object
     this.scene.objects[this.wordOffset].classes!.push('animate__animated animate__flash');
 
-    setTimeout(() => this.scene.objects[this.wordOffset].classes!.pop(), 1000);
+    setTimeout(() => this.scene.objects![this.wordOffset].classes!.pop(), 1000);
   }
 
   collect(objectName: string): void {
+    if (!this.scene.objects) return;
+
     // check if correct object has been selected
     if (!(this.scene.objects[this.wordOffset].name === objectName)) {
       return;
@@ -91,8 +92,9 @@ export class SceneComponent implements OnInit {
     this.scene.objects[this.wordOffset].classes!.push('animate__animated animate__heartBeat');
 
     setTimeout(() => {
-      this.scene.objects.splice(this.wordOffset, 1);
-      this.words.splice(this.wordOffset, 1);
+      this.scene.objects = this.scene.objects!.toSpliced(this.wordOffset, 1);
+
+      this.words = this.words.toSpliced(this.wordOffset, 1);
       if (this.wordOffset > this.words.length - 1) {
         this.wordOffset--;
       }

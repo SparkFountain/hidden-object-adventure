@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Scene } from '../interfaces/scene.interface';
 import { SceneComponent } from '../scene/scene';
+import { RouterModule } from '@angular/router';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {
+  faPlayCircle,
+  faHome,
+  faCloud,
+  faSun,
+  faCarSide,
+  faTruckMonster,
+  faHiking,
+  faHorse,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-welcome',
-  imports: [SceneComponent],
+  imports: [SceneComponent, RouterModule, FontAwesomeModule],
   templateUrl: './welcome.html',
   styleUrl: './welcome.scss',
 })
 export class WelcomeComponent implements OnInit {
   scene!: Scene;
+
+  // FontAwesome icons
+  faPlayCircle = faPlayCircle;
 
   constructor() {}
 
@@ -19,7 +35,8 @@ export class WelcomeComponent implements OnInit {
       backgroundUrl: 'welcome.jpg',
       decoration: [
         {
-          icon: 'fas fa-home fa-2x',
+          icon: faHome,
+          size: '2x',
           style: {
             top: 396,
             left: 70,
@@ -28,7 +45,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['black'],
         },
         {
-          icon: 'fas fa-home fa-2x',
+          icon: faHome,
+          size: '2x',
           style: {
             top: 392,
             left: 120,
@@ -37,7 +55,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['red-dark'],
         },
         {
-          icon: 'fas fa-home fa-2x',
+          icon: faHome,
+          size: '2x',
           style: {
             top: 394,
             left: 170,
@@ -46,7 +65,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['green-dark'],
         },
         {
-          icon: 'fas fa-cloud fa-3x',
+          icon: faCloud,
+          size: '3x',
           style: {
             top: 103,
             left: 45,
@@ -55,7 +75,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['white'],
         },
         {
-          icon: 'fas fa-cloud fa-2x',
+          icon: faCloud,
+          size: '2x',
           style: {
             top: 103,
             left: 205,
@@ -64,7 +85,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['white'],
         },
         {
-          icon: 'fas fa-cloud fa-4x',
+          icon: faCloud,
+          size: '4x',
           style: {
             top: 103,
             left: 273,
@@ -73,7 +95,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['white'],
         },
         {
-          icon: 'fas fa-sun fa-3x',
+          icon: faSun,
+          size: '3x',
           style: {
             top: 103,
             left: 128,
@@ -82,7 +105,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['red'],
         },
         {
-          icon: 'fas fa-car-side',
+          icon: faCarSide,
+          size: '1x',
           style: {
             top: 473,
             left: 28,
@@ -90,7 +114,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['black'],
         },
         {
-          icon: 'fas fa-truck-monster',
+          icon: faTruckMonster,
+          size: '1x',
           style: {
             top: 423,
             left: 277,
@@ -99,7 +124,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['black'],
         },
         {
-          icon: 'fas fa-hiking',
+          icon: faHiking,
+          size: '1x',
           style: {
             top: 250,
             left: 10,
@@ -107,7 +133,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['black'],
         },
         {
-          icon: 'fas fa-horse',
+          icon: faHorse,
+          size: '1x',
           style: {
             top: 350,
             left: 250,
@@ -115,7 +142,8 @@ export class WelcomeComponent implements OnInit {
           classes: ['grey', 'circle-shadow-dark'],
         },
         {
-          icon: 'fas fa-horse',
+          icon: faHorse,
+          size: '1x',
           style: {
             top: 330,
             left: 230,
@@ -124,7 +152,6 @@ export class WelcomeComponent implements OnInit {
           classes: ['grey', 'circle-shadow-dark'],
         },
       ],
-      objects: [],
     };
   }
 }

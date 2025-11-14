@@ -1,10 +1,15 @@
+import { IconDefinition, SizeProp } from '@fortawesome/fontawesome-svg-core';
+
 export interface Decoration {
-  icon: string;
-  style: {
-    top: number;
-    left: number;
-    transform?: string;
-    opacity?: number;
-  };
+  icon: IconDefinition;
+  size: SizeProp;
+  style: DecoStyle;
   classes?: string[];
+}
+
+export interface DecoStyle {
+  top: string | number;
+  left: string | number;
+  transform?: string;
+  opacity?: number;
 }
