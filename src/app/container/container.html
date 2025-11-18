@@ -1,11 +1,11 @@
 <div class="arrow" (click)="moveWords('left')">
-  <i class="fas fa-angle-double-left circle-shadow-light"></i>
+  <fa-icon [icon]="faAngleDoubleLeft" class="circle-shadow-light" />
 </div>
 
 <div class="word-container" [ngStyle]="{ left: wordOffset + 'px' }">
-  <div class="word circle-shadow-dark">{{ words[wordOffset] }}</div>
+  <div class="word text-shadow-dark">{{ words[wordOffset] }}</div>
 </div>
 
 <div class="arrow" (click)="moveWords('right')">
-  <i class="fas fa-angle-double-right circle-shadow-light"></i>
+  <fa-icon [icon]="faAngleDoubleRight" class="circle-shadow-light" />
 </div>

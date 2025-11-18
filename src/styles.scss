@@ -52,12 +52,21 @@ h1 {
   color: variables.$black;
 }
 
-.circle-shadow-light {
+.text-shadow-light {
   text-shadow: 0 0 10px variables.$white;
 }
 
-.circle-shadow-dark {
+.circle-shadow-light {
+  text-shadow: 0 0 10px variables.$white;
+  filter: drop-shadow(0 0 10px variables.$white);
+}
+
+.text-shadow-dark {
   text-shadow: 0 0 10px variables.$black;
+}
+
+.circle-shadow-dark {
+  filter: drop-shadow(0 0 10px variables.$black);
 }
 
 app-container {
