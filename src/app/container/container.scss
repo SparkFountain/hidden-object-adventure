@@ -1,16 +1,16 @@
-@import '../../variables.scss';
+@use '../../variables.scss';
 
 :host {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: $red-dark;
+  color: variables.$red-dark;
   font-size: 24px;
 }
 
 .arrow {
   width: 30px;
-  color: $green-dark;
+  color: variables.$green-dark;
   z-index: 100;
 }
 

@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@use '../../variables.scss';
 
 .container {
   width: 100%;
@@ -14,7 +14,7 @@
   p {
     text-align: justify;
     padding: 10px 50px;
-    background-color: rgba($white, 0.25);
+    background-color: rgba(variables.$white, 0.25);
   }
 
   .okay {

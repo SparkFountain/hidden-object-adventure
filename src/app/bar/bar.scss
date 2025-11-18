@@ -1,37 +1,37 @@
-@import '../../variables.scss';
+@use '../../variables.scss';
 
 .dice01 {
   top: 370px;
   left: 300px;
-  color: $white;
+  color: variables.$white;
   transform: rotate(16deg);
 }
 
 .cigarette01 {
   top: 135px;
   left: 120px;
-  color: $black;
+  color: variables.$black;
   transform: rotate(6deg);
 }
 
 .hamburger01 {
   top: 44px;
   left: 80px;
-  color: $white;
+  color: variables.$white;
   opacity: 0.1;
 }
 
 .football01 {
   top: 282px;
   left: 198px;
-  color: $black;
+  color: variables.$black;
   opacity: 0.91;
 }
 
 .card01 {
   top: 338px;
   left: 208px;
-  color: $red;
+  color: variables.$red;
   opacity: 0.5;
   transform: rotate(103deg);
 }

@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@use '../../variables.scss';
 
 .container {
   width: 100%;
@@ -52,7 +52,7 @@ fa-icon {
 .forest {
   top: 114px;
   left: 290px;
-  color: $green-dark;
+  color: variables.$green-dark;
 }
 
 .icon-igloo {
@@ -71,7 +71,7 @@ fa-icon {
 .zoo {
   top: 394px;
   left: 285px;
-  color: $grey;
+  color: variables.$grey;
 }
 
 .icon-tram {
@@ -81,7 +81,7 @@ fa-icon {
 .cableway {
   top: 114px;
   left: 44px;
-  color: $black;
+  color: variables.$black;
 }
 
 .icon-theater-masks {
@@ -91,7 +91,7 @@ fa-icon {
 .theater {
   top: 306px;
   left: 140px;
-  color: $green;
+  color: variables.$green;
 }
 
 .icon-glass-cheers {
@@ -101,7 +101,7 @@ fa-icon {
 .bar {
   top: 250px;
   left: 255px;
-  color: $red;
+  color: variables.$red;
 }
 
 .icon-swimmer {
@@ -111,7 +111,7 @@ fa-icon {
 .pool {
   top: 356px;
   left: 22px;
-  color: $black;
+  color: variables.$black;
 }
 
 .icon-hotel {
@@ -121,7 +121,7 @@ fa-icon {
 .hotel {
   top: 467px;
   left: 81px;
-  color: $grey;
+  color: variables.$grey;
 }
 
 .icon-skating {
@@ -131,5 +131,5 @@ fa-icon {
 .ice-skating {
   top: 150px;
   left: 160px;
-  color: $white;
+  color: variables.$white;
 }

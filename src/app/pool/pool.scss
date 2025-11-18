@@ -1,4 +1,4 @@
-@import '../../variables.scss';
+@use '../../variables.scss';
 
 .container {
   width: 100%;
@@ -24,7 +24,7 @@
 .male01 {
   top: 160px;
   left: 2px;
-  color: $black;
+  color: variables.$black;
   transform: rotate(-18deg);
   opacity: 0.75;
 }
@@ -32,6 +32,6 @@
 .female01 {
   top: 160px;
   left: 43px;
-  color: $black;
+  color: variables.$black;
   opacity: 0.75;
 }
