@@ -1,4 +1,4 @@
-import { Component, computed, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { CollectableObject } from '../interfaces/collectable-object.interface';
 import { Scene } from '../interfaces/scene.interface';
 import { NgStyle, Location, NgClass } from '@angular/common';
@@ -23,19 +23,14 @@ export class SceneComponent implements OnInit {
   });
   wordsSignal = signal<string[]>([]);
   wordOffset = 0;
-  highlightSignal = signal<boolean>(false);
+  helpIndexSignal = signal<number | null>(null);
 
   // FontAwesome icons
   faScroll = faScroll;
   faQuestionCircle = faQuestionCircle;
   faTrophy = faTrophy;
 
-  highlightClasses = computed(() => ({
-    animate__animated: this.highlightSignal(),
-    animate__flash: this.highlightSignal(),
-  }));
-
-  constructor(private location: Location) {}
+  private location: Location = inject(Location);
 
   ngOnInit(): void {
     this.sceneSignal.set(structuredClone(this.scene));
@@ -81,14 +76,9 @@ export class SceneComponent implements OnInit {
     }
 
     // highlight active object
-    this.highlightSignal.set(false);
-    // requestAnimationFrame(() => {
-    //   this.highlightSignal.set(true);
-    // });
+    this.helpIndexSignal.set(this.wordOffset);
 
-    this.sceneSignal().objects![this.wordOffset].classes!.push('animate__animated animate__flash');
-
-    setTimeout(() => this.sceneSignal().objects![this.wordOffset].classes!.pop(), 1000);
+    setTimeout(() => this.helpIndexSignal.set(null), 1000);
   }
 
   collect(objectName: string): void {

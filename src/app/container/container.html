@@ -1,4 +1,4 @@
-<div class="arrow" (click)="moveWords('left')">
+<div class="arrow" (click)="moveWords('left')" (keyup.arrowLeft)="moveWords('left')" tabindex="0">
   <fa-icon [icon]="faAngleDoubleLeft" class="circle-shadow-light" />
 </div>
 
@@ -6,6 +6,6 @@
   <div class="word text-shadow-dark">{{ words[wordOffset] }}</div>
 </div>
 
-<div class="arrow" (click)="moveWords('right')">
+<div class="arrow" (click)="moveWords('right')" (keyup.arrowRight)="moveWords('right')" tabindex="1">
   <fa-icon [icon]="faAngleDoubleRight" class="circle-shadow-light" />
 </div>

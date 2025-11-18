@@ -25,8 +25,6 @@ import { SceneComponent } from '../scene/scene';
 export class ZooComponent implements OnInit {
   scene!: Scene;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.scene = {
       name: 'Zoo',

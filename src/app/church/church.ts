@@ -27,8 +27,6 @@ export class ChurchComponent implements OnInit {
   scene!: Scene;
   words!: string[];
 
-  constructor() {}
-
   ngOnInit(): void {
     this.words = [];
 

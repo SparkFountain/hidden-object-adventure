@@ -1,5 +1,5 @@
 import { NgStyle } from '@angular/common';
-import { afterNextRender, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
@@ -11,9 +11,9 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-s
   styleUrl: './container.scss',
 })
 export class ContainerComponent implements OnInit {
-  @Input('words') words!: string[];
-  @Input('wordOffset') wordOffset!: number;
-  @Output('changedWord') changedWord: EventEmitter<number>;
+  @Input() words!: string[];
+  @Input() wordOffset!: number;
+  @Output() changedWord: EventEmitter<number>;
 
   // FontAwesome icons
   faAngleDoubleLeft = faAngleDoubleLeft;
@@ -35,4 +35,3 @@ export class ContainerComponent implements OnInit {
     }
   }
 }
-afterNextRender;

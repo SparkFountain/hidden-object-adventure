@@ -27,8 +27,6 @@ export class Bar implements OnInit {
 
   faMartiniGlassCitrus = faMartiniGlassCitrus;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.scene = {
       name: 'Bar',

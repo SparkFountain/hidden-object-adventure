@@ -25,8 +25,6 @@ import {
 export class IglooComponent implements OnInit {
   scene!: Scene;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.scene = {
       name: 'Siedlung',

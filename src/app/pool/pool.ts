@@ -25,8 +25,6 @@ import {
 export class PoolComponent implements OnInit {
   scene!: Scene;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.scene = {
       name: 'Schwimmbad',

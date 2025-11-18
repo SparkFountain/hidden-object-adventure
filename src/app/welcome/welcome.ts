@@ -27,8 +27,6 @@ export class WelcomeComponent implements OnInit {
   // FontAwesome icons
   faPlayCircle = faPlayCircle;
 
-  constructor() {}
-
   ngOnInit(): void {
     this.scene = {
       name: 'Willkommen',

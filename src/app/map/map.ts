@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -21,7 +21,7 @@ import {
   templateUrl: './map.html',
   styleUrl: './map.scss',
 })
-export class MapComponent implements OnInit {
+export class MapComponent {
   // FontAwesome icons
   faChurch = faChurch;
   faTree = faTree;
@@ -33,8 +33,4 @@ export class MapComponent implements OnInit {
   faGlassCheers = faGlassCheers;
   faSwimmer = faSwimmer;
   faHotel = faHotel;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
